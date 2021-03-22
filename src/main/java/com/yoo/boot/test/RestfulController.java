@@ -3,6 +3,7 @@ package com.yoo.boot.test;
 
 import com.yoo.boot.common.config.YooConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,17 @@ public class RestfulController {
 
         List<String> li = Arrays.asList("a", "b");
         return li;
+    }
+
+    @GetMapping("/userInfo")
+    public User outputUser(){
+        User user=new User();
+        user.setId(1001);
+        user.setName("Bob");
+        user.setAddress("The U.S.A");
+        user.setAge(24);
+        user.setPhoneNum("13200001111");
+        return user;
     }
 
     @RequestMapping("/test")
