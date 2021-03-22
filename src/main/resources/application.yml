@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: yoo-system
+  profiles:
+    active: dev
