@@ -1,2 +1,18 @@
 server:
   port: 8088
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name} false
+spring:
+  jackson:
+    serialization:
+      indent_output: true
