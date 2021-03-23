@@ -2,6 +2,7 @@ package com.yoo.boot.test;
 
 
 import com.yoo.boot.common.config.YooConfig;
+import com.yoo.boot.common.exception.YooBootException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +38,8 @@ public class RestfulController {
         user.setAddress("The U.S.A");
         user.setAge(24);
         user.setPhoneNum("13200001111");
-        return user;
+        throw new YooBootException("test");
+//        return user;
     }
 
     @RequestMapping("/test")
